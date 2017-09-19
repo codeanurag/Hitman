@@ -35,7 +35,8 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/seekBar"
         android:max="100"
-        android:progress="50" />
+        android:progress="50"
+        android:thumb="@drawable/ic_pointer"/>
 
     <TextView
         android:id="@+id/txtMinSeek"
