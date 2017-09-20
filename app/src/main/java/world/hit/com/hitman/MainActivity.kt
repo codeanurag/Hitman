@@ -1,7 +1,9 @@
 package world.hit.com.hitman
 
+import android.content.DialogInterface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.widget.SeekBar
 import android.widget.Toast
 
@@ -25,9 +27,17 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
-                showToast(seekBar.progress.toString())
+                showResult(seekBar.progress.toString())
             }
         })
+    }
+
+    fun showResult(msg: String){
+        var alertdialog = AlertDialog.Builder(this);
+        alertdialog.setTitle("Score")
+        alertdialog.setMessage("You have hit to : "+ msg)
+        alertdialog.setPositiveButton("ok", null)
+        alertdialog.show()
     }
 
     private fun showToast(msg: String) {
